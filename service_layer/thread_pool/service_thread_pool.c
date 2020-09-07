@@ -9,8 +9,7 @@
 
 static int is_thread_alive(pthread_t tid)
 {
-    int kill_rc = pthread_kill(tid, 0); 
-    if (kill_rc == ESRCH) 
+    if (ESRCH == pthread_kill(tid, 0)) 
     {
         return 0;
     }
